@@ -1,106 +1,103 @@
 /* =================================
    FLEUR PERFUMES
-   CATALOG SYSTEM
+   MAIN JAVASCRIPT
 ================================= */
+
+
+/* ================================
+   PRODUCTS
+================================ */
 
 
 const products = [
 
-
 {
+id:1,
 name:"Honour",
 brand:"Amouage",
-image:"images/amouage-honour.jpg",
+image:"./images/amouage-honour.jpg",
 description:"Роскошный восточный аромат с цветочными и пряными нотами."
 },
 
-
-
 {
+id:2,
 name:"Chance Eau Tendre",
 brand:"Chanel",
-image:"images/chance-eau-tendre.jpg",
+image:"./images/chance-eau-tendre.jpg",
 description:"Нежный женственный аромат с нотами фруктов, розы и жасмина."
 },
 
-
-
 {
+id:3,
 name:"Vétiver d'Haïti au thé vert",
 brand:"Chopard",
-image:"images/chopard-vetiver.jpg",
+image:"./images/chopard-vetiver.jpg",
 description:"Свежий древесный аромат с зелёным чаем и ветивером."
 },
 
-
-
 {
+id:4,
 name:"Dior Homme Intense",
 brand:"Dior",
-image:"images/dior-homme-intense.jpg",
+image:"./images/dior-homme-intense.jpg",
 description:"Элегантный мужской аромат с ирисом и древесными нотами."
 },
 
-
-
 {
+id:5,
 name:"Blackberry & Bay",
 brand:"Jo Malone",
-image:"images/jo-malone-blackberry.jpg",
+image:"./images/jo-malone-blackberry.jpg",
 description:"Свежий аромат ежевики с зелёными нотами."
 },
 
-
-
 {
+id:6,
 name:"Peony & Blush Suede",
 brand:"Jo Malone",
-image:"images/jo-malone-peony.jpg",
+image:"./images/jo-malone-peony.jpg",
 description:"Нежный цветочный аромат с пионом и мягкой кожей."
 },
 
-
-
 {
+id:7,
 name:"Angel's Share",
 brand:"Kilian",
-image:"images/kilian-angels-share.jpg",
+image:"./images/kilian-angels-share.jpg",
 description:"Сладкий аромат с коньяком, корицей и ванилью."
 },
 
-
-
 {
+id:8,
 name:"Love Don't Be Shy",
 brand:"Kilian",
-image:"images/kilian-love.jpg",
+image:"./images/kilian-love.jpg",
 description:"Сладкий женственный аромат с карамелью и ванилью."
 },
 
-
-
 {
+id:9,
 name:"Idôle",
 brand:"Lancôme",
-image:"images/lancome-idole.jpg",
+image:"./images/lancome-idole.jpg",
 description:"Современный цветочный аромат с розой и жасмином."
 },
 
-
-
 {
+id:10,
 name:"Attrape-Rêves",
 brand:"Louis Vuitton",
-image:"images/lv-attrape-reves.jpg",
+image:"./images/lv-attrape-reves.jpg",
 description:"Воздушный аромат с пионом, личи и какао."
 }
-
-
 
 ];
 
 
 
+/* ================================
+   CART STORAGE
+================================ */
 
 
 let cart = JSON.parse(
@@ -111,22 +108,19 @@ localStorage.getItem("fleurCart")
 
 
 
-
 /* ================================
-   LOAD CATALOG
+   LOAD PRODUCTS
 ================================ */
 
 
 function loadProducts(){
 
 
-let container =
+const container =
 document.getElementById("products");
 
 
-
-if(!container)
-return;
+if(!container) return;
 
 
 
@@ -138,7 +132,6 @@ products.forEach(product=>{
 
 
 container.innerHTML += `
-
 
 <div class="product-card">
 
@@ -152,7 +145,7 @@ alt="${product.name}"
 
 <h3>
 
-<a href="product.html?id=${product.name}">
+<a href="product.html?id=${product.id}">
 
 ${product.name}
 
@@ -163,17 +156,13 @@ ${product.name}
 
 
 <p class="brand">
-
 ${product.brand}
-
 </p>
 
 
 
 <p>
-
 ${product.description}
-
 </p>
 
 
@@ -182,23 +171,17 @@ ${product.description}
 
 
 <option value="6000">
-
 6 мл — 6000 ₸
-
 </option>
 
 
 <option value="10000">
-
 8 мл — 10000 ₸
-
 </option>
 
 
 <option value="15000">
-
 15 мл — 15000 ₸
-
 </option>
 
 
@@ -207,19 +190,14 @@ ${product.description}
 
 
 <h3 class="price">
-
 6000 ₸
-
 </h3>
 
 
 
-<button
-
+<button 
 class="btn gold"
-
-onclick="addToCart(this)"
-
+onclick="addToCart(${product.id},this)"
 >
 
 🛒 В корзину
@@ -228,14 +206,10 @@ onclick="addToCart(this)"
 
 
 
-<a
-
+<a 
 class="btn dark"
-
 target="_blank"
-
-href="https://wa.me/77781655756?text=Здравствуйте! Хочу заказать ${product.brand} ${product.name}"
-
+href="https://wa.me/77781655756"
 >
 
 WhatsApp
@@ -243,9 +217,7 @@ WhatsApp
 </a>
 
 
-
 </div>
-
 
 `;
 
@@ -258,18 +230,14 @@ WhatsApp
 
 
 
-
-
-
-
 /* ================================
-   PRICE CHANGE
+   CHANGE PRICE
 ================================ */
 
 
 document.addEventListener(
 "change",
-function(e){
+e=>{
 
 
 if(
@@ -296,14 +264,19 @@ e.target.value+" ₸";
 
 
 
-
-
 /* ================================
-   ADD TO CART
+   ADD CART
 ================================ */
 
 
-function addToCart(button){
+function addToCart(id,button){
+
+
+let product =
+products.find(
+p=>p.id===id
+);
+
 
 
 let card =
@@ -311,37 +284,30 @@ button.closest(".product-card");
 
 
 
-let name =
-card.querySelector("h3 a").innerText;
-
-
-
-let volume =
+let select =
 card.querySelector(".volume");
 
 
 
-let product={
+let item={
 
+name:product.name,
 
-name:name,
-
+brand:product.brand,
 
 volume:
-volume.options[
-volume.selectedIndex
+select.options[
+select.selectedIndex
 ].text,
 
-
 price:
-volume.value
-
+Number(select.value)
 
 };
 
 
 
-cart.push(product);
+cart.push(item);
 
 
 
@@ -353,12 +319,11 @@ JSON.stringify(cart)
 
 
 alert(
-name+" добавлен в корзину 🛒"
+product.name+" добавлен в корзину 🛒"
 );
 
 
 }
-
 
 
 
@@ -374,10 +339,12 @@ name+" добавлен в корзину 🛒"
 
 document.addEventListener(
 "input",
-function(e){
+e=>{
 
 
-if(e.target.id==="search"){
+if(
+e.target.id==="search"
+){
 
 
 let value =
@@ -391,7 +358,6 @@ document
 
 
 card.style.display =
-
 card.innerText
 .toLowerCase()
 .includes(value)
@@ -419,23 +385,22 @@ card.innerText
 
 
 
-
-
 /* ================================
-   FILTER BRAND
+   FILTER
 ================================ */
 
 
 document.addEventListener(
 "change",
-function(e){
+e=>{
 
 
-if(e.target.id==="brandFilter"){
+if(
+e.target.id==="brandFilter"
+){
 
 
-let brand =
-e.target.value;
+let brand=e.target.value;
 
 
 
@@ -444,23 +409,18 @@ document
 .forEach(card=>{
 
 
-if(
+card.style.display =
+
 brand==="all" ||
 card.innerText.includes(brand)
 
-)
+?
 
-{
+"block"
 
-card.style.display="block";
+:
 
-}
-
-else{
-
-card.style.display="none";
-
-}
+"none";
 
 
 });
@@ -470,7 +430,6 @@ card.style.display="none";
 
 
 });
-
 
 
 
@@ -487,25 +446,17 @@ card.style.display="none";
 function loadProduct(){
 
 
-let params =
-new URLSearchParams(
-window.location.search
-);
-
-
 let id =
-params.get("id");
-
-
-
-if(!id)
-return;
+new URLSearchParams(
+location.search
+)
+.get("id");
 
 
 
 let product =
 products.find(
-p=>p.name===id
+p=>p.id==id
 );
 
 
@@ -515,22 +466,30 @@ return;
 
 
 
-document.getElementById("productName").innerHTML =
+document
+.getElementById("productName")
+.innerHTML =
 product.name;
 
 
 
-document.getElementById("productBrand").innerHTML =
+document
+.getElementById("productBrand")
+.innerHTML =
 product.brand;
 
 
 
-document.getElementById("productDescription").innerHTML =
+document
+.getElementById("productDescription")
+.innerHTML =
 product.description;
 
 
 
-document.getElementById("productImage").src =
+document
+.getElementById("productImage")
+.src =
 product.image;
 
 
@@ -542,10 +501,8 @@ product.image;
 
 
 
-
-
 /* ================================
-   CART
+   CART PAGE
 ================================ */
 
 
@@ -556,7 +513,6 @@ let box =
 document.getElementById("cartItems");
 
 
-
 if(!box)
 return;
 
@@ -565,15 +521,15 @@ return;
 let total=0;
 
 
-
 box.innerHTML="";
 
 
 
-cart.forEach((item,index)=>{
+cart.forEach(
+(item,index)=>{
 
 
-total += Number(item.price);
+total+=item.price;
 
 
 
@@ -583,19 +539,23 @@ box.innerHTML += `
 <div class="cart-item">
 
 
-<h3>${item.name}</h3>
+<h3>
+${item.name}
+</h3>
 
 
-<p>${item.volume}</p>
+<p>
+${item.volume}
+</p>
 
 
-<p>${item.price} ₸</p>
+<p>
+${item.price} ₸
+</p>
 
 
 <button onclick="removeCart(${index})">
-
 Удалить
-
 </button>
 
 
@@ -610,11 +570,18 @@ box.innerHTML += `
 
 
 
-document.getElementById("total").innerHTML =
+let totalBox =
+document.getElementById("total");
+
+
+if(totalBox)
+
+totalBox.innerHTML =
 "Итого: "+total+" ₸";
 
 
 }
+
 
 
 
@@ -637,13 +604,14 @@ JSON.stringify(cart)
 
 loadCart();
 
-
 }
 
 
 
 
-
+/* ================================
+   WHATSAPP CHECKOUT
+================================ */
 
 
 function checkout(){
@@ -659,12 +627,7 @@ cart.forEach(item=>{
 
 text +=
 
-item.name+
-" "+
-item.volume+
-" - "+
-item.price+
-" ₸%0A";
+`${item.name} ${item.volume} - ${item.price} ₸%0A`;
 
 
 });
@@ -681,3 +644,26 @@ window.open(
 
 
 }
+
+
+
+
+
+/* ================================
+   AUTO START
+================================ */
+
+
+document.addEventListener(
+"DOMContentLoaded",
+()=>{
+
+
+loadProducts();
+
+loadProduct();
+
+loadCart();
+
+
+});
