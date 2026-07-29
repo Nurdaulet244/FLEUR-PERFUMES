@@ -1,0 +1,6 @@
+﻿'convert_cp.py
+*.pyc
+__pycache__/
+*.log
+.vscode/
+'
