@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FLEUR PERFUMES WHOLESALE</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+
+<div class="logo">
+FLEUR <span>PERFUMES</span>
+</div>
+
+
+<nav>
+
+<a href="index.html">
+Главная
+</a>
+
+<a href="catalog.html">
+Каталог
+</a>
+
+<a href="wholesale.html">
+Оптовикам
+</a>
+
+<a href="index.html#contacts">
+Контакты
+</a>
+
+</nav>
+
+
+</header>
+
+
+
+
+
+
+
+<!-- HERO WHOLESALE -->
+
+
+<section class="wholesale-hero">
+
+
+<div>
+
+
+<h1>
+FLEUR PERFUMES WHOLESALE
+</h1>
+
+
+<h2>
+Парфюмерные масла премиум-класса из ОАЭ
+</h2>
+
+
+<p>
+
+Оптовые поставки оригинальных парфюмерных масел напрямую
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- BENEFITS -->
+
+
+<section class="advantages">
+
+
+<h2>
+Что мы предлагаем
+</h2>
+
+
+
+<div class="adv-grid">
+
+
+<div>
+
+<h3>
+✨ 200+ ароматов
+</h3>
+
+<p>
+Популярные мировые бренды
+</p>
+
+</div>
+
+
+
+<div>
+
+<h3>
+💎 Высокая концентрация
+</h3>
+
+<p>
+Премиальное качество масел
+</p>
+
+</div>
+
+
+
+<div>
+
+<h3>
+🌍 Прямые поставки
+</h3>
+
+<p>
+Из ОАЭ
+</p>
+
+</div>
+
+
+
+
+<div>
+
+<h3>
+🚚 Доставка
+</h3>
+
+<p>
+По всему Казахстану
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- WHOLESALE PRODUCTS -->
+
+
+<section class="catalog">
+
+
+<h2>
+Оптовый каталог
+</h2>
+
+
+
+<div class="catalog-grid">
+
+
+
+<div class="product-card">
+
+
+<img src="images/lv.jpg">
+
+
+<h2>
+Louis Vuitton Imagination
+</h2>
+
+
+<p>
+🧴 Фасовка:
+</p>
+
+
+<h3>
+1 литр
+</h3>
+
+
+<p>
+✅ В наличии
+</p>
+
+
+
+<button onclick="requestPrice(
+'Louis Vuitton Imagination'
+)">
+
+Получить оптовый прайс
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="product-card">
+
+
+<img src="images/chance.jpg">
+
+
+<h2>
+Chanel Chance Eau Tendre
+</h2>
+
+
+<p>
+🧴 Фасовка:
+</p>
+
+
+<h3>
+1 литр
+</h3>
+
+
+<p>
+✅ В наличии
+</p>
+
+
+
+<button onclick="requestPrice(
+'Chanel Chance Eau Tendre'
+)">
+
+Получить оптовый прайс
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="product-card">
+
+
+<img src="images/megamare.jpg">
+
+
+<h2>
+Megamare
+</h2>
+
+
+<p>
+🧴 Фасовка:
+</p>
+
+
+<h3>
+1 литр
+</h3>
+
+
+<p>
+✅ В наличии
+</p>
+
+
+
+<button onclick="requestPrice(
+'Megamare Orto Parisi'
+)">
+
+Получить оптовый прайс
+
+</button>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- FORM -->
+
+
+<section class="wholesale-form">
+
+
+<h2>
+Получить оптовый прайс
+</h2>
+
+
+
+<input 
+id="name"
+placeholder="Имя"
+>
+
+
+
+<input 
+id="company"
+placeholder="Компания"
+>
+
+
+
+<input 
+id="phone"
+placeholder="Телефон"
+>
+
+
+
+<input 
+id="city"
+placeholder="Город"
+>
+
+
+
+<input 
+id="aroma"
+placeholder="Интересующий аромат"
+>
+
+
+
+
+
+<select id="volume">
+
+
+<option>
+1 литр
+</option>
+
+
+<option>
+5 литров
+</option>
+
+
+<option>
+10 литров
+</option>
+
+
+</select>
+
+
+
+
+
+<button onclick="sendWholesale()">
+
+Получить прайс
+
+</button>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- PARTNER -->
+
+
+<section class="business">
+
+
+<h2>
+
+Хотите открыть свой парфюмерный бизнес?
+
+</h2>
+
+
+
+<p>
+
+Мы поможем начать продажи:
+
+</p>
+
+
+<ul>
+
+<li>
+✔ подбор ассортимента
+</li>
+
+<li>
+✔ консультации по запуску
+</li>
+
+<li>
+✔ поставки масел
+</li>
+
+<li>
+✔ помощь начинающим предпринимателям
+</li>
+
+
+</ul>
+
+
+
+<a class="btn gold"
+href="javascript:sendWholesale()">
+
+Стать партнёром
+
+</a>
+
+
+</section>
+
+
+
+
+
+
+
+
+<footer>
+
+
+<p>
+© 2026 FLEUR PERFUMES
+</p>
+
+
+</footer>
+
+
+
+
+
+<script src="app.js"></script>
+
+
+</body>
+
+</html>

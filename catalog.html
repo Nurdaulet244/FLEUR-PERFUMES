@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>
+Каталог ароматов | FLEUR PERFUMES
+</title>
+
+
+<meta 
+name="description"
+content="FLEUR PERFUMES — премиальные парфюмерные масла из ОАЭ. Chanel, Dior, Amouage, Louis Vuitton и другие ароматы."
+>
+
+
+<link rel="stylesheet" href="style.css">
+
+
+<link 
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+
+</head>
+
+
+<body>
+
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+
+<div class="logo">
+
+FLEUR 
+<span>
+PERFUMES
+</span>
+
+</div>
+
+
+
+<nav>
+
+
+<a href="index.html">
+Главная
+</a>
+
+
+<a href="catalog.html">
+Каталог
+</a>
+
+
+<a href="wholesale.html">
+Оптовикам
+</a>
+
+
+<a href="cart.html">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Корзина
+
+</a>
+
+
+<a href="index.html#contacts">
+Контакты
+</a>
+
+
+</nav>
+
+
+</header>
+
+
+
+
+
+
+
+
+
+<!-- CATALOG TITLE -->
+
+
+<section class="catalog-header">
+
+
+<h1>
+
+FLEUR PERFUMES
+
+</h1>
+
+
+<h2>
+
+Каталог премиальных ароматов
+
+</h2>
+
+
+
+<p>
+
+Парфюмерные масла из ОАЭ
+
+<br>
+
+Более 200 ароматов класса Premium
+
+</p>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- SEARCH -->
+
+
+<section class="search-area">
+
+
+<input
+
+type="text"
+
+id="search"
+
+placeholder="🔍 Найти аромат или бренд..."
+
+>
+
+
+
+<select id="brandFilter">
+
+
+<option value="all">
+Все бренды
+</option>
+
+
+<option value="Amouage">
+Amouage
+</option>
+
+
+<option value="Chanel">
+Chanel
+</option>
+
+
+<option value="Chopard">
+Chopard
+</option>
+
+
+<option value="Clive Christian">
+Clive Christian
+</option>
+
+
+<option value="Dior">
+Dior
+</option>
+
+
+<option value="Ex Nihilo">
+Ex Nihilo
+</option>
+
+
+<option value="Gucci">
+Gucci
+</option>
+
+
+<option value="Jo Malone">
+Jo Malone
+</option>
+
+
+<option value="Kilian">
+Kilian
+</option>
+
+
+<option value="Lancôme">
+Lancôme
+</option>
+
+
+<option value="Louis Vuitton">
+Louis Vuitton
+</option>
+
+
+<option value="Parfums de Marly">
+Parfums de Marly
+</option>
+
+
+<option value="Byredo">
+Byredo
+</option>
+
+
+<option value="Tom Ford">
+Tom Ford
+</option>
+
+
+<option value="Creed">
+Creed
+</option>
+
+
+<option value="Xerjoff">
+Xerjoff
+</option>
+
+
+<option value="Nishane">
+Nishane
+</option>
+
+
+</select>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- PRODUCTS -->
+
+<section class="catalog">
+
+
+<div 
+
+class="catalog-grid"
+
+id="products"
+
+>
+
+
+<!-- товары загружаются автоматически из app.js -->
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- WHOLESALE -->
+
+
+<section class="business">
+
+
+<h2>
+
+Для оптовых клиентов
+
+</h2>
+
+
+
+<p>
+
+Открывайте свой парфюмерный бизнес вместе с FLEUR PERFUMES
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+✔ Опт от 1 литра
+</li>
+
+
+<li>
+✔ Парфюмерные масла из ОАЭ
+</li>
+
+
+<li>
+✔ Более 200 ароматов
+</li>
+
+
+<li>
+✔ Цены для магазинов и предпринимателей
+</li>
+
+
+</ul>
+
+
+
+<a 
+
+href="wholesale.html"
+
+class="btn gold"
+
+>
+
+Получить условия
+
+</a>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- FLOAT BUTTONS -->
+
+
+<div class="floating-buttons">
+
+
+<a
+
+href="https://wa.me/77781655756"
+
+target="_blank"
+
+class="whatsapp-float"
+
+>
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+
+
+<a
+
+href="https://instagram.com/fleur.perfumes.kz"
+
+target="_blank"
+
+class="instagram-float"
+
+>
+
+<i class="fa-brands fa-instagram"></i>
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- FOOTER -->
+
+
+<footer>
+
+
+<p>
+© 2026 FLEUR PERFUMES
+</p>
+
+
+<p>
+Premium perfume oils from UAE
+</p>
+
+
+<p>
+fleur.perfumes.kz
+</p>
+
+
+</footer>
+
+const products = [
+
+{
+name:"Althaïr",
+brand:"Parfums de Marly",
+image:"images/Althair Parfums de Marly.jpeg",
+description:"Роскошный аромат с нотами бурбонской ванили, корицы, кардамона и древесных аккордов."
+},
+
+
+{
+name:"Guidance",
+brand:"Amouage",
+image:"images/Amouage Guidance.jpeg",
+description:"Загадочный восточный аромат с грушей, розой, жасмином и сандалом."
+},
+
+
+{
+name:"Honour",
+brand:"Amouage",
+image:"images/Amouage Honour_2.jpeg",
+description:"Элегантный цветочный аромат с белыми цветами, туберозой и гарденией."
+},
+
+
+{
+name:"Blue Talisman",
+brand:"Ex Nihilo",
+image:"images/Blue Talisman.jpeg",
+description:"Яркий унисекс аромат с цитрусовыми, фруктовыми и мускусными нотами."
+},
+
+
+{
+name:"Chance Eau Tendre",
+brand:"Chanel",
+image:"images/Chance_2.jpeg",
+description:"Нежный аромат с грейпфрутом, айвой, жасмином и белым мускусом."
+},
+
+
+{
+name:"Vétiver",
+brand:"Chopard",
+image:"images/Chopard Vetiver_2.jpeg",
+description:"Благородный древесный аромат с ветивером и цитрусовыми нотами."
+},
+
+
+{
+name:"Addictive Arts",
+brand:"Clive Christian",
+image:"images/Clive Christian Addietive Arts.jpeg",
+description:"Изысканный премиальный аромат класса Luxury."
+},
+
+
+{
+name:"Dior Homme Intense",
+brand:"Dior",
+image:"images/Dior homme_2.jpeg",
+description:"Мужской аромат с ирисом, амброй и древесными нотами."
+},
+
+
+{
+name:"Flora Gorgeous Gardenia",
+brand:"Gucci",
+image:"images/Gucci Flora Gordenia.jpeg",
+description:"Цветочный аромат с гарденией, грушей и сладкими нотами."
+},
+
+
+{
+name:"Gucci Guilty Pour Femme",
+brand:"Gucci",
+image:"images/Gucci Guilty Pour Femme.jpeg",
+description:"Женственный аромат с розовым перцем, сиренью и амброй."
+}
+
+];
+
+
+
+
+
+
+
+<script src="app.js"></script>
+
+
+<script>
+
+loadProducts();
+
+</script>
+
+
+
+</body>
+
+</html>
