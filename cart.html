@@ -30,19 +30,22 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 
 
+
 <!-- HEADER -->
+
 
 <header class="header">
 
 
 <div class="logo">
 
-FLEUR 
+FLEUR
 <span>
 PERFUMES
 </span>
 
 </div>
+
 
 
 
@@ -54,14 +57,17 @@ PERFUMES
 </a>
 
 
+
 <a href="catalog.html">
 Каталог
 </a>
 
 
+
 <a href="wholesale.html">
 Оптовикам
 </a>
+
 
 
 <a href="cart.html">
@@ -73,11 +79,17 @@ PERFUMES
 </a>
 
 
+
+<a href="index.html#contacts">
+Контакты
+</a>
+
+
+
 </nav>
 
 
 </header>
-
 
 
 
@@ -102,7 +114,10 @@ PERFUMES
 
 
 
-<div id="cartItems">
+<div 
+id="cartItems"
+class="cart-items"
+>
 
 </div>
 
@@ -110,11 +125,20 @@ PERFUMES
 
 
 
-<h2 id="total">
+
+<h2 
+id="total"
+>
 
 </h2>
 
 
+
+
+
+
+
+<div class="cart-buttons">
 
 
 
@@ -126,11 +150,35 @@ onclick="checkout()"
 
 >
 
+
 <i class="fa-brands fa-whatsapp"></i>
 
 Оформить заказ
 
+
 </button>
+
+
+
+
+
+<a
+
+href="catalog.html"
+
+class="btn"
+
+>
+
+
+Продолжить покупки
+
+
+</a>
+
+
+
+</div>
 
 
 
@@ -152,6 +200,7 @@ onclick="checkout()"
 <div class="floating-buttons">
 
 
+
 <a
 
 href="https://wa.me/77781655756"
@@ -162,9 +211,14 @@ class="whatsapp-float"
 
 >
 
+
 <i class="fa-brands fa-whatsapp"></i>
 
+
 </a>
+
+
+
 
 
 
@@ -178,9 +232,12 @@ class="instagram-float"
 
 >
 
+
 <i class="fa-brands fa-instagram"></i>
 
+
 </a>
+
 
 
 </div>
@@ -200,17 +257,24 @@ class="instagram-float"
 
 
 <p>
-
 © 2026 FLEUR PERFUMES
-
 </p>
 
 
 <p>
-
-fleur.perfumes.kz
-
+Премиальные парфюмерные масла из ОАЭ
 </p>
+
+
+<p>
+Алматы: 87781655756
+</p>
+
+
+<p>
+Астана: 87714013715
+</p>
+
 
 
 </footer>
@@ -222,18 +286,12 @@ fleur.perfumes.kz
 
 
 
+<script src="products.js"></script>
 <script src="app.js"></script>
 
 
 
-<script>
-
-loadCart();
-
-</script>
-
-
-
 </body>
+
 
 </html>

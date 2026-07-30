@@ -1,50 +1,41 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<!-- FLOAT BUTTONS -->
+<head>
 
-<div class="floating-buttons">
+<meta charset="UTF-8">
 
-
-<a 
-href="https://wa.me/77781655756"
-target="_blank"
-class="whatsapp-float">
-
-<i class="fa-brands fa-whatsapp"></i>
-
-</a>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-
-<a 
-href="https://instagram.com/fleur.perfumes.kz"
-target="_blank"
-class="instagram-float">
-
-<i class="fa-brands fa-instagram"></i>
-
-</a>
+<title>
+FLEUR PERFUMES | Премиальные парфюмерные масла
+</title>
 
 
-</div>
+<link rel="stylesheet" href="style.css">
 
+
+<link 
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+</head>
 
 
 <body>
 
 
 
-
 <!-- HEADER -->
-
 
 <header class="header">
 
 
 <div class="logo">
 
-FLEUR 
+FLEUR
 <span>
 PERFUMES
 </span>
@@ -67,22 +58,20 @@ PERFUMES
 
 
 <a href="wholesale.html">
-Опт
+Оптовикам
 </a>
 
 
 <a href="cart.html">
-🛒 Корзина
-</a>
 
+<i class="fa-solid fa-cart-shopping"></i>
 
-<a href="#contacts">
-Контакты
+Корзина
+
 </a>
 
 
 </nav>
-
 
 
 </header>
@@ -93,75 +82,142 @@ PERFUMES
 
 
 
-
-
 <!-- HERO -->
 
 
-<section class="hero-video">
-
-
-<video autoplay muted loop>
-
-
-<source src="videos/perfume.mp4"
-type="video/mp4">
-
-
-</video>
-
-
+<section class="hero">
 
 
 <div class="hero-content">
 
 
-
 <h1>
-
 FLEUR PERFUMES
-
 </h1>
 
 
-
 <h2>
-
-Оригинальные парфюмерные масла из ОАЭ
-
+Премиальные парфюмерные масла из ОАЭ
 </h2>
-
 
 
 <p>
 
-Более 200 ароматов мировых брендов
+Ароматы мировых брендов.
+<br>
+Высокая концентрация.
+<br>
+Роскошный шлейф.
 
 </p>
 
 
 
-
-<div class="hero-buttons">
-
-
-<a href="catalog.html"
-class="btn gold">
-
-🛍 Розничный каталог
-
-</a>
+<div>
 
 
+<a 
+href="catalog.html"
+class="btn gold"
+>
 
-<a href="wholesale.html"
-class="btn dark">
-
-🤝 Оптовым покупателям
+Смотреть каталог
 
 </a>
 
 
+
+<a 
+href="wholesale.html"
+class="btn dark"
+>
+
+Оптовикам
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- ADVANTAGES -->
+
+
+<section class="advantages">
+
+
+<h2>
+Почему выбирают FLEUR PERFUMES
+</h2>
+
+
+
+<div class="adv-grid">
+
+
+<div>
+
+<h3>
+💎 Premium качество
+</h3>
+
+<p>
+Высококонцентрированные парфюмерные масла
+</p>
+
+</div>
+
+
+
+<div>
+
+<h3>
+🌍 ОАЭ
+</h3>
+
+<p>
+Прямые поставки
+</p>
+
+</div>
+
+
+
+<div>
+
+<h3>
+✨ 200+ ароматов
+</h3>
+
+<p>
+Женские, мужские и унисекс
+</p>
+
+</div>
+
+
+
+<div>
+
+<h3>
+🚚 Доставка
+</h3>
+
+<p>
+По всему Казахстану
+</p>
 
 </div>
 
@@ -183,40 +239,41 @@ class="btn dark">
 <!-- POPULAR -->
 
 
-<section class="section">
+<section class="catalog">
 
 
 <h2>
-
-🔥 Хиты продаж
-
+Популярные ароматы
 </h2>
 
 
 
-<div class="products-preview">
+<div class="catalog-grid">
 
 
-<div class="card">
+
+<div class="product-card">
+
+
+<img src="images/Baccarat Rouge 540.jpeg">
 
 
 <h3>
-
-Chanel Chance Eau Tendre
-
+Baccarat Rouge 540
 </h3>
 
 
-<p>
-
-🌸 Женский • Унисекс
-
+<p class="brand">
+Maison Francis Kurkdjian
 </p>
 
 
-<a href="product.html?id=1">
+<a 
+href="catalog.html"
+class="btn gold"
+>
 
-Смотреть
+Подробнее
 
 </a>
 
@@ -228,26 +285,28 @@ Chanel Chance Eau Tendre
 
 
 
-<div class="card">
+<div class="product-card">
+
+
+<img src="images/Amouage Guidance.jpeg">
 
 
 <h3>
-
-Louis Vuitton Imagination
-
+Guidance
 </h3>
 
 
-<p>
-
-🖤 Мужской • Унисекс
-
+<p class="brand">
+Amouage
 </p>
 
 
-<a href="product.html?id=2">
+<a 
+href="catalog.html"
+class="btn gold"
+>
 
-Смотреть
+Подробнее
 
 </a>
 
@@ -259,171 +318,34 @@ Louis Vuitton Imagination
 
 
 
-<div class="card">
+<div class="product-card">
+
+
+<img src="images/Althair Parfums de Marly.jpeg">
 
 
 <h3>
-
-Megamare
-
+Althaïr
 </h3>
 
 
-<p>
-
-🌊 Нишевый аромат
-
+<p class="brand">
+Parfums de Marly
 </p>
 
 
-<a href="product.html?id=3">
+<a 
+href="catalog.html"
+class="btn gold"
+>
 
-Смотреть
+Подробнее
 
 </a>
 
 
 </div>
 
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- ADVANTAGES -->
-
-
-<section class="advantages">
-
-
-<h2>
-
-Почему FLEUR PERFUMES
-
-</h2>
-
-
-
-<div class="adv-grid">
-
-
-<div>
-
-<h3>
-💎
-</h3>
-
-<p>
-
-Высокая концентрация масел
-
-</p>
-
-</div>
-
-
-
-<div>
-
-<h3>
-🌍
-</h3>
-
-<p>
-
-Поставки из ОАЭ
-
-</p>
-
-</div>
-
-
-
-<div>
-
-<h3>
-✨
-</h3>
-
-<p>
-
-Более 200 ароматов
-
-</p>
-
-</div>
-
-
-
-<div>
-
-<h3>
-🚚
-</h3>
-
-<p>
-
-Доставка по Казахстану
-
-</p>
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- NEW -->
-
-
-<section class="section">
-
-
-<h2>
-
-✨ Новинки
-
-</h2>
-
-
-
-<div class="new-banner">
-
-
-<p>
-
-Новые нишевые ароматы каждую неделю
-
-</p>
-
-
-<a href="catalog.html"
-class="btn gold">
-
-Смотреть каталог
-
-</a>
 
 
 </div>
@@ -440,61 +362,59 @@ class="btn gold">
 
 
 
-<!-- BUSINESS -->
+<!-- WHOLESALE -->
 
 
 <section class="business">
 
 
-
 <h2>
-
-Хотите открыть свой парфюмерный бизнес?
-
+Откройте свой парфюмерный бизнес
 </h2>
 
 
 
 <p>
 
-Мы поможем начать продажи:
+FLEUR PERFUMES предлагает оптовые поставки
+премиальных масел для магазинов,
+салонов красоты и предпринимателей.
+
+</p>
+
+
+<br>
+
+
+<p>
+
+✔ Более 200 ароматов
+
+<br>
+
+✔ Опт от 1 литра
+
+<br>
+
+✔ Помощь в подборе ассортимента
+
+<br>
+
+✔ Доставка по Казахстану
 
 </p>
 
 
 
-<ul>
+<br>
 
 
-<li>
-✔ масла из ОАЭ
-</li>
+<a 
+href="wholesale.html"
+class="btn gold"
+>
 
-
-<li>
-✔ поставки от 1 литра
-</li>
-
-
-<li>
-✔ помощь в подборе ассортимента
-</li>
-
-
-<li>
-✔ консультации партнёров
-</li>
-
-
-</ul>
-
-
-
-
-<a href="wholesale.html"
-class="btn gold">
-
-Стать партнёром
+Стать партнером
 
 </a>
 
@@ -510,141 +430,15 @@ class="btn gold">
 
 
 
-<!-- REVIEWS -->
+<!-- CONTACTS -->
 
 
-<section class="reviews">
-
-
-<h2>
-
-Отзывы клиентов
-
-</h2>
-
-
-
-<div class="review-grid">
-
-
-
-<div class="review">
-
-
-⭐⭐⭐⭐⭐
-
-<p>
-
-"Очень стойкие ароматы.
-Качество выше ожиданий."
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="review">
-
-
-⭐⭐⭐⭐⭐
-
-<p>
-
-"Заказываю регулярно.
-Всегда отличный сервис."
-
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="review">
-
-
-⭐⭐⭐⭐⭐
-
-<p>
-
-"Красивые флаконы и премиальный запах."
-
-</p>
-
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- INSTAGRAM -->
-
-
-<section class="instagram">
+<section class="contacts">
 
 
 <h2>
-
-Наш Instagram
-
+Наши контакты
 </h2>
-
-
-<p>
-
-@fleur.perfumes.kz
-
-</p>
-
-
-<p>
-
-@fleur.perfumes.astana
-
-</p>
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- CONTACT -->
-
-
-<section id="contacts"
-class="contacts">
-
-
-<h2>
-
-Контакты
-
-</h2>
-
 
 
 
@@ -652,38 +446,76 @@ class="contacts">
 
 
 
-<div>
+<div class="contact-card">
+
 
 <h3>
-
-Алматы
-
+🌸 Алматы
 </h3>
 
 
 <p>
-📱 +7 778 165 57 56
+📞 87781655756
 </p>
+
+
+<p>
+
+Instagram:
+
+<br>
+
+<a href="https://instagram.com/fleur.perfumes.kz"
+target="_blank">
+
+@fleur.perfumes.kz
+
+</a>
+
+</p>
+
 
 </div>
 
 
 
 
-<div>
+
+
+
+<div class="contact-card">
+
 
 <h3>
-
-Астана
-
+🌸 Астана
 </h3>
 
 
 <p>
-📱 +7 771 401 37 15
+📞 87714013715
 </p>
 
+
+<p>
+
+Instagram:
+
+<br>
+
+
+<a href="https://instagram.com/fleur.perfumes.astana"
+target="_blank">
+
+@fleur.perfumes.astana
+
+</a>
+
+
+</p>
+
+
 </div>
+
 
 
 
@@ -700,18 +532,75 @@ class="contacts">
 
 
 
+<!-- FLOAT BUTTONS -->
+
+
+<div class="floating-buttons">
+
+
+<a
+
+href="https://wa.me/77781655756"
+
+target="_blank"
+
+class="whatsapp-float"
+
+>
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+
+
+<a
+
+href="https://instagram.com/fleur.perfumes.kz"
+
+target="_blank"
+
+class="instagram-float"
+
+>
+
+<i class="fa-brands fa-instagram"></i>
+
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- FOOTER -->
+
+
 <footer>
 
 
 <p>
-
 © 2026 FLEUR PERFUMES
+</p>
 
+
+<p>
+fleur.perfumes.kz
+</p>
+
+
+<p>
+Алматы | Астана
 </p>
 
 
 </footer>
-
 
 
 
@@ -723,33 +612,4 @@ class="contacts">
 
 </body>
 
-
-</html>
-<!-- FLOAT BUTTONS -->
-
-<div class="floating-buttons">
-
-<a 
-href="https://wa.me/77781655756"
-target="_blank"
-class="whatsapp-float">
-
-💬
-
-</a>
-
-
-<a 
-href="https://instagram.com/fleur.perfumes.kz"
-target="_blank"
-class="instagram-float">
-
-📷
-
-</a>
-
-</div>
-
-
-</body>
 </html>

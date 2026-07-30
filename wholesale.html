@@ -1,47 +1,81 @@
 <!DOCTYPE html>
 <html lang="ru">
 
+
 <head>
+
 
 <meta charset="UTF-8">
 
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>FLEUR PERFUMES WHOLESALE</title>
+
+<title>
+FLEUR PERFUMES WHOLESALE
+</title>
+
 
 <link rel="stylesheet" href="style.css">
+
+
+<link 
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
 
 </head>
 
 
+
 <body>
+
+
+
+<!-- HEADER -->
 
 
 <header class="header">
 
 
 <div class="logo">
-FLEUR <span>PERFUMES</span>
+
+FLEUR
+<span>
+PERFUMES
+</span>
+
 </div>
 
 
+
 <nav>
+
 
 <a href="index.html">
 Главная
 </a>
 
+
 <a href="catalog.html">
 Каталог
 </a>
+
 
 <a href="wholesale.html">
 Оптовикам
 </a>
 
-<a href="index.html#contacts">
-Контакты
+
+<a href="cart.html">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+Корзина
+
 </a>
+
 
 </nav>
 
@@ -54,30 +88,42 @@ FLEUR <span>PERFUMES</span>
 
 
 
-<!-- HERO WHOLESALE -->
+
+<!-- HERO -->
 
 
-<section class="wholesale-hero">
+<section class="hero">
 
 
-<div>
+<div class="hero-content">
 
 
 <h1>
-FLEUR PERFUMES WHOLESALE
+FLEUR PERFUMES
 </h1>
 
 
 <h2>
-Парфюмерные масла премиум-класса из ОАЭ
+WHOLESALE
 </h2>
 
 
 <p>
 
-Оптовые поставки оригинальных парфюмерных масел напрямую
+Оптовые поставки премиальных парфюмерных масел из ОАЭ
 
 </p>
+
+
+
+<a 
+href="#form"
+class="btn gold"
+>
+
+Получить прайс
+
+</a>
 
 
 </div>
@@ -91,19 +137,21 @@ FLEUR PERFUMES WHOLESALE
 
 
 
-<!-- BENEFITS -->
+
+<!-- ADVANTAGES -->
 
 
 <section class="advantages">
 
 
 <h2>
-Что мы предлагаем
+Почему выбирают нас
 </h2>
 
 
 
 <div class="adv-grid">
+
 
 
 <div>
@@ -120,28 +168,30 @@ FLEUR PERFUMES WHOLESALE
 
 
 
+
 <div>
 
 <h3>
-💎 Высокая концентрация
+🌍 ОАЭ
 </h3>
 
 <p>
-Премиальное качество масел
+Прямые поставки масел
 </p>
 
 </div>
 
 
 
+
 <div>
 
 <h3>
-🌍 Прямые поставки
+💎 Premium качество
 </h3>
 
 <p>
-Из ОАЭ
+Высокая концентрация
 </p>
 
 </div>
@@ -176,15 +226,14 @@ FLEUR PERFUMES WHOLESALE
 
 
 
-
-<!-- WHOLESALE PRODUCTS -->
+<!-- WHOLESALE PACKAGES -->
 
 
 <section class="catalog">
 
 
 <h2>
-Оптовый каталог
+Оптовые объемы
 </h2>
 
 
@@ -196,38 +245,27 @@ FLEUR PERFUMES WHOLESALE
 <div class="product-card">
 
 
-<img src="images/lv.jpg">
-
-
-<h2>
-Louis Vuitton Imagination
-</h2>
-
-
-<p>
-🧴 Фасовка:
-</p>
-
-
 <h3>
-1 литр
+🧴 1 литр
 </h3>
 
 
 <p>
-✅ В наличии
+Для небольших магазинов и начинающих предпринимателей
 </p>
 
 
+<button
 
-<button onclick="requestPrice(
-'Louis Vuitton Imagination'
-)">
+class="btn gold"
 
-Получить оптовый прайс
+onclick="requestPrice('1 литр')"
+
+>
+
+Получить цену
 
 </button>
-
 
 
 </div>
@@ -237,44 +275,30 @@ Louis Vuitton Imagination
 
 
 
-
-
-
 <div class="product-card">
 
 
-<img src="images/chance.jpg">
-
-
-<h2>
-Chanel Chance Eau Tendre
-</h2>
-
-
-<p>
-🧴 Фасовка:
-</p>
-
-
 <h3>
-1 литр
+🧴 5 литров
 </h3>
 
 
 <p>
-✅ В наличии
+Для стабильных продаж и салонов красоты
 </p>
 
 
+<button
 
-<button onclick="requestPrice(
-'Chanel Chance Eau Tendre'
-)">
+class="btn gold"
 
-Получить оптовый прайс
+onclick="requestPrice('5 литров')"
+
+>
+
+Получить цену
 
 </button>
-
 
 
 </div>
@@ -284,44 +308,30 @@ Chanel Chance Eau Tendre
 
 
 
-
-
-
 <div class="product-card">
 
 
-<img src="images/megamare.jpg">
-
-
-<h2>
-Megamare
-</h2>
-
-
-<p>
-🧴 Фасовка:
-</p>
-
-
 <h3>
-1 литр
+🧴 10 литров
 </h3>
 
 
 <p>
-✅ В наличии
+Для крупных оптовых клиентов
 </p>
 
 
+<button
 
-<button onclick="requestPrice(
-'Megamare Orto Parisi'
-)">
+class="btn gold"
 
-Получить оптовый прайс
+onclick="requestPrice('10 литров')"
+
+>
+
+Получить цену
 
 </button>
-
 
 
 </div>
@@ -341,11 +351,13 @@ Megamare
 
 
 
-
 <!-- FORM -->
 
 
-<section class="wholesale-form">
+<section 
+class="business"
+id="form"
+>
 
 
 <h2>
@@ -354,40 +366,53 @@ Megamare
 
 
 
-<input 
+<input
+
 id="name"
-placeholder="Имя"
+
+placeholder="Ваше имя"
+
 >
 
 
 
-<input 
+<input
+
 id="company"
-placeholder="Компания"
+
+placeholder="Компания / магазин"
+
 >
 
 
 
-<input 
+<input
+
 id="phone"
+
 placeholder="Телефон"
+
 >
 
 
 
-<input 
+<input
+
 id="city"
+
 placeholder="Город"
+
 >
 
 
 
-<input 
+<input
+
 id="aroma"
+
 placeholder="Интересующий аромат"
+
 >
-
-
 
 
 
@@ -414,8 +439,15 @@ placeholder="Интересующий аромат"
 
 
 
+<button
 
-<button onclick="sendWholesale()">
+class="btn gold"
+
+onclick="sendWholesale()"
+
+>
+
+<i class="fa-brands fa-whatsapp"></i>
 
 Получить прайс
 
@@ -436,12 +468,12 @@ placeholder="Интересующий аромат"
 <!-- PARTNER -->
 
 
-<section class="business">
+<section class="advantages">
 
 
 <h2>
 
-Хотите открыть свой парфюмерный бизнес?
+Откройте свой парфюмерный бизнес
 
 </h2>
 
@@ -449,44 +481,81 @@ placeholder="Интересующий аромат"
 
 <p>
 
-Мы поможем начать продажи:
+Мы поможем подобрать ассортимент и начать продажи.
 
 </p>
 
 
-<ul>
-
-<li>
-✔ подбор ассортимента
-</li>
-
-<li>
-✔ консультации по запуску
-</li>
-
-<li>
-✔ поставки масел
-</li>
-
-<li>
-✔ помощь начинающим предпринимателям
-</li>
+<br>
 
 
-</ul>
+<p>
 
+✔ Подбор ароматов
 
+<br>
 
-<a class="btn gold"
-href="javascript:sendWholesale()">
+✔ Консультации
 
-Стать партнёром
+<br>
 
-</a>
+✔ Оптовые поставки
+
+<br>
+
+✔ Поддержка партнеров
+
+</p>
+
 
 
 </section>
 
+
+
+
+
+
+
+
+<!-- FLOAT -->
+
+
+<div class="floating-buttons">
+
+
+<a
+
+href="https://wa.me/77781655756"
+
+target="_blank"
+
+class="whatsapp-float"
+
+>
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+
+
+<a
+
+href="https://instagram.com/fleur.perfumes.kz"
+
+target="_blank"
+
+class="instagram-float"
+
+>
+
+<i class="fa-brands fa-instagram"></i>
+
+</a>
+
+
+</div>
 
 
 
@@ -502,7 +571,13 @@ href="javascript:sendWholesale()">
 </p>
 
 
+<p>
+📧 info@fleur.perfumes.kz
+</p>
+
+
 </footer>
+
 
 
 

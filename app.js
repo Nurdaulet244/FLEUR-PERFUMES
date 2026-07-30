@@ -1,227 +1,217 @@
-/* =================================
-   FLEUR PERFUMES
-   MAIN JAVASCRIPT
-================================= */
+/* =========================
+   FLEUR PERFUMES APP.JS
+========================= */
 
 
-/* ================================
-   PRODUCTS
-================================ */
+/* =========================
+   DISPLAY PRODUCTS
+========================= */
 
 
-const products = [
+function displayProducts(list = products){
 
-{
-id:1,
-name:"Honour",
-brand:"Amouage",
-image:"./images/amouage-honour.jpg",
-description:"Роскошный восточный аромат с цветочными и пряными нотами."
-},
+    const container = document.getElementById("products");
 
-{
-id:2,
-name:"Chance Eau Tendre",
-brand:"Chanel",
-image:"./images/chance-eau-tendre.jpg",
-description:"Нежный женственный аромат с нотами фруктов, розы и жасмина."
-},
+    if(!container) return;
 
-{
-id:3,
-name:"Vétiver d'Haïti au thé vert",
-brand:"Chopard",
-image:"./images/chopard-vetiver.jpg",
-description:"Свежий древесный аромат с зелёным чаем и ветивером."
-},
 
-{
-id:4,
-name:"Dior Homme Intense",
-brand:"Dior",
-image:"./images/dior-homme-intense.jpg",
-description:"Элегантный мужской аромат с ирисом и древесными нотами."
-},
+    container.innerHTML = "";
 
-{
-id:5,
-name:"Blackberry & Bay",
-brand:"Jo Malone",
-image:"./images/jo-malone-blackberry.jpg",
-description:"Свежий аромат ежевики с зелёными нотами."
-},
 
-{
-id:6,
-name:"Peony & Blush Suede",
-brand:"Jo Malone",
-image:"./images/jo-malone-peony.jpg",
-description:"Нежный цветочный аромат с пионом и мягкой кожей."
-},
+    list.forEach(product => {
 
-{
-id:7,
-name:"Angel's Share",
-brand:"Kilian",
-image:"./images/kilian-angels-share.jpg",
-description:"Сладкий аромат с коньяком, корицей и ванилью."
-},
 
-{
-id:8,
-name:"Love Don't Be Shy",
-brand:"Kilian",
-image:"./images/kilian-love.jpg",
-description:"Сладкий женственный аромат с карамелью и ванилью."
-},
+        container.innerHTML += `
 
-{
-id:9,
-name:"Idôle",
-brand:"Lancôme",
-image:"./images/lancome-idole.jpg",
-description:"Современный цветочный аромат с розой и жасмином."
-},
+        <div class="product-card">
 
-{
-id:10,
-name:"Attrape-Rêves",
-brand:"Louis Vuitton",
-image:"./images/lv-attrape-reves.jpg",
-description:"Воздушный аромат с пионом, личи и какао."
+
+            <img 
+            src="${product.image}"
+            alt="${product.name}"
+            loading="lazy"
+            >
+
+
+            <h3>
+            ${product.name}
+            </h3>
+
+
+            <p class="brand">
+            ${product.brand}
+            </p>
+
+
+            <p class="description">
+            ${product.description}
+            </p>
+
+
+            <button
+            class="btn gold"
+            onclick="addToCart(${product.id})"
+            >
+
+            🛒 В корзину
+
+            </button>
+
+
+        </div>
+
+        `;
+
+
+    });
+
+
 }
 
-];
 
 
 
-/* ================================
+
+/* =========================
+   SEARCH FILTER
+========================= */
+
+
+function initCatalog(){
+
+
+    if(typeof products === "undefined") return;
+
+
+    displayProducts();
+
+
+
+    const search =
+    document.getElementById("search");
+
+
+    const brandFilter =
+    document.getElementById("brandFilter");
+
+
+
+    function filterProducts(){
+
+
+        let result = products;
+
+
+
+        if(search){
+
+
+            const text =
+            search.value
+            .toLowerCase()
+            .trim();
+
+
+
+            if(text){
+
+
+                result =
+                result.filter(product =>
+
+
+                    product.name
+                    .toLowerCase()
+                    .includes(text)
+
+
+                    ||
+
+
+                    product.brand
+                    .toLowerCase()
+                    .includes(text)
+
+
+                );
+
+
+            }
+
+
+        }
+
+
+
+
+        if(
+        brandFilter &&
+        brandFilter.value !== "all"
+        ){
+
+
+            result =
+            result.filter(product =>
+
+            product.brand === brandFilter.value
+
+            );
+
+
+        }
+
+
+
+        displayProducts(result);
+
+
+    }
+
+
+
+
+    if(search){
+
+        search.addEventListener(
+            "input",
+            filterProducts
+        );
+
+    }
+
+
+
+
+    if(brandFilter){
+
+        brandFilter.addEventListener(
+            "change",
+            filterProducts
+        );
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+/* =========================
    CART STORAGE
-================================ */
+========================= */
 
 
-let cart = JSON.parse(
-localStorage.getItem("fleurCart")
-) || [];
+function getCart(){
 
 
-
-
-
-/* ================================
-   LOAD PRODUCTS
-================================ */
-
-
-function loadProducts(){
-
-
-const container =
-document.getElementById("products");
-
-
-if(!container) return;
-
-
-
-container.innerHTML="";
-
-
-
-products.forEach(product=>{
-
-
-container.innerHTML += `
-
-<div class="product-card">
-
-
-<img 
-src="${product.image}"
-alt="${product.name}"
->
-
-
-
-<h3>
-
-<a href="product.html?id=${product.id}">
-
-${product.name}
-
-</a>
-
-</h3>
-
-
-
-<p class="brand">
-${product.brand}
-</p>
-
-
-
-<p>
-${product.description}
-</p>
-
-
-
-<select class="volume">
-
-
-<option value="6000">
-6 мл — 6000 ₸
-</option>
-
-
-<option value="10000">
-8 мл — 10000 ₸
-</option>
-
-
-<option value="15000">
-15 мл — 15000 ₸
-</option>
-
-
-</select>
-
-
-
-<h3 class="price">
-6000 ₸
-</h3>
-
-
-
-<button 
-class="btn gold"
-onclick="addToCart(${product.id},this)"
->
-
-🛒 В корзину
-
-</button>
-
-
-
-<a 
-class="btn dark"
-target="_blank"
-href="https://wa.me/77781655756"
->
-
-WhatsApp
-
-</a>
-
-
-</div>
-
-`;
-
-});
+    return JSON.parse(
+        localStorage.getItem("cart")
+    ) || [];
 
 
 }
@@ -230,97 +220,14 @@ WhatsApp
 
 
 
-/* ================================
-   CHANGE PRICE
-================================ */
+
+function saveCart(cart){
 
 
-document.addEventListener(
-"change",
-e=>{
-
-
-if(
-e.target.classList.contains("volume")
-){
-
-
-let card =
-e.target.closest(".product-card");
-
-
-card.querySelector(".price").innerHTML =
-e.target.value+" ₸";
-
-
-}
-
-
-});
-
-
-
-
-
-
-
-/* ================================
-   ADD CART
-================================ */
-
-
-function addToCart(id,button){
-
-
-let product =
-products.find(
-p=>p.id===id
-);
-
-
-
-let card =
-button.closest(".product-card");
-
-
-
-let select =
-card.querySelector(".volume");
-
-
-
-let item={
-
-name:product.name,
-
-brand:product.brand,
-
-volume:
-select.options[
-select.selectedIndex
-].text,
-
-price:
-Number(select.value)
-
-};
-
-
-
-cart.push(item);
-
-
-
-localStorage.setItem(
-"fleurCart",
-JSON.stringify(cart)
-);
-
-
-
-alert(
-product.name+" добавлен в корзину 🛒"
-);
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
 
 
 }
@@ -331,253 +238,177 @@ product.name+" добавлен в корзину 🛒"
 
 
 
-
-/* ================================
-   SEARCH
-================================ */
-
-
-document.addEventListener(
-"input",
-e=>{
+/* =========================
+   ADD TO CART
+========================= */
 
 
-if(
-e.target.id==="search"
-){
+function addToCart(id){
 
 
-let value =
-e.target.value.toLowerCase();
+    if(typeof products === "undefined")
+    return;
 
 
 
-document
-.querySelectorAll(".product-card")
-.forEach(card=>{
-
-
-card.style.display =
-card.innerText
-.toLowerCase()
-.includes(value)
-
-?
-
-"block"
-
-:
-
-"none";
-
-
-});
-
-
-}
-
-
-});
+    let cart = getCart();
 
 
 
+    let product =
+    products.find(item =>
+        item.id === id
+    );
 
 
 
-
-/* ================================
-   FILTER
-================================ */
+    if(product){
 
 
-document.addEventListener(
-"change",
-e=>{
+        cart.push(product);
 
 
-if(
-e.target.id==="brandFilter"
-){
-
-
-let brand=e.target.value;
+        saveCart(cart);
 
 
 
-document
-.querySelectorAll(".product-card")
-.forEach(card=>{
+        alert(
+        product.name +
+        " добавлен в корзину"
+        );
 
 
-card.style.display =
-
-brand==="all" ||
-card.innerText.includes(brand)
-
-?
-
-"block"
-
-:
-
-"none";
-
-
-});
+    }
 
 
 }
 
 
-});
 
 
 
 
 
-
-
-
-/* ================================
-   PRODUCT PAGE
-================================ */
-
-
-function loadProduct(){
-
-
-let id =
-new URLSearchParams(
-location.search
-)
-.get("id");
-
-
-
-let product =
-products.find(
-p=>p.id==id
-);
-
-
-
-if(!product)
-return;
-
-
-
-document
-.getElementById("productName")
-.innerHTML =
-product.name;
-
-
-
-document
-.getElementById("productBrand")
-.innerHTML =
-product.brand;
-
-
-
-document
-.getElementById("productDescription")
-.innerHTML =
-product.description;
-
-
-
-document
-.getElementById("productImage")
-.src =
-product.image;
-
-
-}
-
-
-
-
-
-
-
-/* ================================
-   CART PAGE
-================================ */
+/* =========================
+   LOAD CART
+========================= */
 
 
 function loadCart(){
 
 
-let box =
-document.getElementById("cartItems");
-
-
-if(!box)
-return;
+    const container =
+    document.getElementById("cartItems");
 
 
 
-let total=0;
-
-
-box.innerHTML="";
-
-
-
-cart.forEach(
-(item,index)=>{
-
-
-total+=item.price;
+    const total =
+    document.getElementById("total");
 
 
 
-box.innerHTML += `
-
-
-<div class="cart-item">
-
-
-<h3>
-${item.name}
-</h3>
-
-
-<p>
-${item.volume}
-</p>
-
-
-<p>
-${item.price} ₸
-</p>
-
-
-<button onclick="removeCart(${index})">
-Удалить
-</button>
-
-
-</div>
-
-
-`;
+    if(!container)
+    return;
 
 
 
-});
+    let cart =
+    getCart();
 
 
 
-let totalBox =
-document.getElementById("total");
+    container.innerHTML="";
 
 
-if(totalBox)
 
-totalBox.innerHTML =
-"Итого: "+total+" ₸";
+
+    if(cart.length===0){
+
+
+        container.innerHTML = `
+
+        <h3>
+        Корзина пустая
+        </h3>
+
+        `;
+
+
+        if(total)
+        total.innerHTML="";
+
+
+        return;
+
+
+    }
+
+
+
+
+
+    cart.forEach((item,index)=>{
+
+
+        container.innerHTML += `
+
+
+        <div class="cart-item">
+
+
+            <img 
+            src="${item.image}"
+            >
+
+
+            <div>
+
+
+                <h3>
+                ${item.name}
+                </h3>
+
+
+                <p>
+                ${item.brand}
+                </p>
+
+
+                <button
+                class="btn dark"
+                onclick="removeCart(${index})"
+                >
+
+                Удалить
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+        `;
+
+
+    });
+
+
+
+
+    if(total){
+
+
+        total.innerHTML =
+
+        "Всего товаров: "
+        +
+        cart.length;
+
+
+    }
 
 
 }
@@ -586,61 +417,108 @@ totalBox.innerHTML =
 
 
 
+
+
+
+/* =========================
+   REMOVE CART
+========================= */
 
 
 function removeCart(index){
 
 
-cart.splice(index,1);
+    let cart =
+    getCart();
 
 
 
-localStorage.setItem(
-"fleurCart",
-JSON.stringify(cart)
-);
+    cart.splice(index,1);
 
 
 
-loadCart();
+    saveCart(cart);
+
+
+
+    loadCart();
+
 
 }
 
 
 
 
-/* ================================
-   WHATSAPP CHECKOUT
-================================ */
+
+
+
+/* =========================
+   WHATSAPP ORDER
+========================= */
 
 
 function checkout(){
 
 
-let text =
-"Здравствуйте! Хочу заказать:%0A%0A";
+    let cart =
+    getCart();
 
 
 
-cart.forEach(item=>{
+    if(cart.length===0){
 
 
-text +=
-
-`${item.name} ${item.volume} - ${item.price} ₸%0A`;
-
-
-});
+        alert(
+        "Корзина пустая"
+        );
 
 
+        return;
 
-window.open(
 
-"https://wa.me/77781655756?text="+text,
+    }
 
-"_blank"
 
-);
+
+    let message =
+    "Здравствуйте, FLEUR PERFUMES!%0A%0A";
+
+
+    message +=
+    "Хочу заказать:%0A";
+
+
+
+
+    cart.forEach(item=>{
+
+
+        message +=
+
+        "- "
+        +
+        item.name
+        +
+        " ("
+        +
+        item.brand
+        +
+        ")%0A";
+
+
+    });
+
+
+
+
+
+    window.open(
+
+    "https://wa.me/77781655756?text="
+    +
+    message
+
+    );
 
 
 }
@@ -649,9 +527,104 @@ window.open(
 
 
 
-/* ================================
-   AUTO START
-================================ */
+
+
+
+
+/* =========================
+   WHOLESALE
+========================= */
+
+
+function sendWholesale(){
+
+
+    const name =
+    document.getElementById("name")?.value || "";
+
+
+    const company =
+    document.getElementById("company")?.value || "";
+
+
+    const phone =
+    document.getElementById("phone")?.value || "";
+
+
+    const city =
+    document.getElementById("city")?.value || "";
+
+
+    const aroma =
+    document.getElementById("aroma")?.value || "";
+
+
+    const volume =
+    document.getElementById("volume")?.value || "";
+
+
+
+
+    let text =
+
+    "Здравствуйте, FLEUR PERFUMES!%0A%0A"
+
+    +
+
+    "Имя: "
+    + name
+    +"%0A"
+
+    +
+
+    "Компания: "
+    + company
+    +"%0A"
+
+    +
+
+    "Телефон: "
+    + phone
+    +"%0A"
+
+    +
+
+    "Город: "
+    + city
+    +"%0A"
+
+    +
+
+    "Аромат: "
+    + aroma
+    +"%0A"
+
+    +
+
+    "Объем: "
+    + volume;
+
+
+
+    window.open(
+
+    "https://wa.me/77781655756?text="
+    +
+    text
+
+    );
+
+
+}
+
+
+
+
+
+
+/* =========================
+   START
+========================= */
 
 
 document.addEventListener(
@@ -659,11 +632,10 @@ document.addEventListener(
 ()=>{
 
 
-loadProducts();
+    initCatalog();
 
-loadProduct();
 
-loadCart();
+    loadCart();
 
 
 });

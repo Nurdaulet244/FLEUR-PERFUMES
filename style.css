@@ -1,89 +1,77 @@
-/* =================================
-   FLEUR PERFUMES
-   PREMIUM STYLE
-================================= */
-
+/* =========================
+   GLOBAL
+========================= */
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:"Arial", sans-serif;
 }
 
-
+html{
+    scroll-behavior:smooth;
+}
 
 body{
-
-font-family:
-"Georgia",
-serif;
-
-color:#222;
-
-background:#fff;
-
-line-height:1.6;
-
+    background:#faf8f5;
+    color:#222;
+    overflow-x:hidden;
 }
-
-
 
 a{
+    text-decoration:none;
+    color:inherit;
+}
 
-text-decoration:none;
-
-color:inherit;
-
+img{
+    max-width:100%;
 }
 
 
 
-/* =================================
-HEADER
-================================= */
-
+/* =========================
+   HEADER
+========================= */
 
 .header{
 
-height:90px;
+    height:80px;
 
-padding:0 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-display:flex;
+    padding:0 7%;
 
-justify-content:space-between;
+    background:#111;
 
-align-items:center;
+    color:white;
 
-background:white;
+    position:sticky;
+    top:0;
 
-position:sticky;
+    z-index:1000;
 
-top:0;
-
-z-index:1000;
-
-border-bottom:1px solid #eee;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
 
 }
-
 
 
 .logo{
 
-font-size:32px;
+    font-size:30px;
 
-letter-spacing:5px;
+    font-weight:bold;
 
-font-weight:bold;
+    letter-spacing:4px;
 
 }
 
 
-
 .logo span{
 
-color:#c9a227;
+    color:#d4af37;
 
 }
 
@@ -91,9 +79,9 @@ color:#c9a227;
 
 nav{
 
-display:flex;
+    display:flex;
 
-gap:30px;
+    gap:30px;
 
 }
 
@@ -101,9 +89,9 @@ gap:30px;
 
 nav a{
 
-font-size:17px;
+    font-size:16px;
 
-transition:.3s;
+    transition:.3s;
 
 }
 
@@ -111,151 +99,110 @@ transition:.3s;
 
 nav a:hover{
 
-color:#c9a227;
+    color:#d4af37;
+
+}
+
+
+
+/* =========================
+   HERO
+========================= */
+
+
+.hero{
+
+    height:650px;
+
+    background:
+
+    linear-gradient(
+    rgba(0,0,0,.6),
+    rgba(0,0,0,.6)
+    ),
+
+    url("images/banner.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+
+
+.hero h1{
+
+    font-size:65px;
+
+    letter-spacing:8px;
+
+}
+
+
+
+.hero h2{
+
+    color:#d4af37;
+
+    font-size:35px;
+
+    margin:20px 0;
+
+}
+
+
+
+.hero p{
+
+    font-size:20px;
+
+    line-height:1.6;
 
 }
 
 
 
 
-
-
-
-
-/* =================================
-VIDEO HERO
-================================= */
-
-
-.hero-video{
-
-height:90vh;
-
-position:relative;
-
-overflow:hidden;
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-text-align:center;
-
-color:white;
-
-}
-
-
-
-.hero-video video{
-
-position:absolute;
-
-width:100%;
-
-height:100%;
-
-object-fit:cover;
-
-}
-
-
-
-.hero-video:after{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-background:
-
-rgba(0,0,0,.45);
-
-}
-
-
-
-
-.hero-content{
-
-position:relative;
-
-z-index:2;
-
-animation:fade 1.5s;
-
-}
-
-
-
-.hero-content h1{
-
-font-size:75px;
-
-letter-spacing:12px;
-
-}
-
-
-
-.hero-content h2{
-
-font-size:32px;
-
-font-weight:normal;
-
-margin:20px;
-
-}
-
-
-
-.hero-content p{
-
-font-size:22px;
-
-}
-
-
-
-
-
-.hero-buttons{
-
-margin-top:40px;
-
-display:flex;
-
-justify-content:center;
-
-gap:25px;
-
-}
-
-
-
-
-
-/* =================================
-BUTTONS
-================================= */
+/* =========================
+ BUTTONS
+========================= */
 
 
 .btn{
 
-padding:16px 35px;
+    display:inline-block;
 
-border-radius:40px;
+    padding:15px 35px;
 
-display:inline-block;
+    border-radius:40px;
 
-font-size:18px;
+    margin:10px;
 
-transition:.4s;
+    border:none;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+.btn:hover{
+
+    transform:translateY(-3px);
 
 }
 
@@ -263,19 +210,16 @@ transition:.4s;
 
 .gold{
 
-background:#c9a227;
+    background:#d4af37;
 
-color:white;
+    color:#111;
 
 }
 
 
-
 .gold:hover{
 
-background:#a77f0c;
-
-transform:translateY(-5px);
+    background:#b89220;
 
 }
 
@@ -283,248 +227,42 @@ transform:translateY(-5px);
 
 .dark{
 
-background:white;
+    background:#111;
 
-color:#111;
-
-}
-
-
-
-.dark:hover{
-
-background:#eee;
-
-transform:translateY(-5px);
+    color:white;
 
 }
 
 
 
 
+/* =========================
+ SECTIONS
+========================= */
 
 
-
-
-/* =================================
-SECTION
-================================= */
-
-
-.section,
+.catalog,
 .advantages,
-.reviews,
-.instagram,
-.contacts{
+.contacts,
+.business,
+.cart-page{
 
-padding:90px 8%;
-
-text-align:center;
+    padding:80px 7%;
 
 }
 
 
 
-.section h2,
+.catalog h2,
 .advantages h2,
-.reviews h2,
-.instagram h2,
-.contacts h2{
-
-font-size:42px;
-
-margin-bottom:50px;
-
-}
-
-
-
-
-
-
-
-
-
-/* =================================
-PRODUCT CARDS
-================================= */
-
-
-.products-preview{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:30px;
-
-}
-
-
-
-.card{
-
-padding:35px;
-
-border:1px solid #eee;
-
-border-radius:25px;
-
-transition:.4s;
-
-}
-
-
-
-.card:hover{
-
-transform:translateY(-10px);
-
-box-shadow:
-0 20px 50px rgba(0,0,0,.1);
-
-}
-
-
-
-.card h3{
-
-font-size:24px;
-
-margin-bottom:15px;
-
-}
-
-
-
-.card a{
-
-color:#c9a227;
-
-font-weight:bold;
-
-}
-
-
-
-
-
-
-
-
-
-/* =================================
-ADVANTAGES
-================================= */
-
-
-.adv-grid{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:25px;
-
-}
-
-
-
-.adv-grid div{
-
-padding:35px;
-
-background:#fafafa;
-
-border-radius:25px;
-
-}
-
-
-
-.adv-grid h3{
-
-font-size:35px;
-
-}
-
-
-
-
-
-
-
-
-
-/* =================================
-NEW BANNER
-================================= */
-
-
-.new-banner{
-
-background:#111;
-
-color:white;
-
-padding:50px;
-
-border-radius:30px;
-
-font-size:25px;
-
-}
-
-
-
-
-
-
-
-
-
-/* =================================
-BUSINESS
-================================= */
-
-
-.business{
-
-padding:100px 10%;
-
-background:#111;
-
-color:white;
-
-text-align:center;
-
-}
-
-
-
+.contacts h2,
 .business h2{
 
-font-size:45px;
+    text-align:center;
 
-}
+    font-size:38px;
 
-
-
-.business ul{
-
-list-style:none;
-
-font-size:20px;
-
-margin:30px;
-
-}
-
-
-
-.business li{
-
-margin:12px;
+    margin-bottom:50px;
 
 }
 
@@ -532,174 +270,42 @@ margin:12px;
 
 
 
-
-
-
-
-/* =================================
-REVIEWS
-================================= */
-
-
-.review-grid{
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:30px;
-
-}
-
-
-
-.review{
-
-padding:35px;
-
-border:1px solid #eee;
-
-border-radius:25px;
-
-font-size:18px;
-
-}
-
-
-
-
-
-
-
-
-/* =================================
-CONTACT
-================================= */
-
-
-.contact-grid{
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:40px;
-
-}
-
-
-
-.contact-grid div{
-
-padding:40px;
-
-border:1px solid #eee;
-
-border-radius:25px;
-
-}
-
-
-
-.contact-grid h3{
-
-font-size:30px;
-
-color:#c9a227;
-
-}
-
-
-
-
-
-
-
-
-
-/* =================================
-CATALOG
-================================= */
-
-
-.catalog-header{
-
-padding:100px 10% 40px;
-
-text-align:center;
-
-}
-
-
-
-.catalog-header h1{
-
-font-size:55px;
-
-}
-
-
-
-.search-area{
-
-display:flex;
-
-justify-content:center;
-
-gap:20px;
-
-padding:30px;
-
-}
-
-
-
-.search-area input,
-.search-area select{
-
-padding:15px 25px;
-
-border-radius:30px;
-
-border:1px solid #ddd;
-
-}
-
-
-
-
-
-.catalog{
-
-padding:50px 8%;
-
-}
-
+/* =========================
+ PRODUCT GRID
+========================= */
 
 
 .catalog-grid{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(4,1fr);
 
-gap:30px;
+    gap:30px;
 
 }
 
 
 
+/* PRODUCT */
+
+
 .product-card{
 
-border:1px solid #eee;
+    background:white;
 
-padding:25px;
+    border-radius:25px;
 
-border-radius:25px;
+    overflow:hidden;
 
-text-align:center;
+    padding:20px;
 
-transition:.4s;
+    text-align:center;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+    transition:.4s;
 
 }
 
@@ -707,10 +313,10 @@ transition:.4s;
 
 .product-card:hover{
 
-transform:translateY(-10px);
+    transform:translateY(-12px);
 
-box-shadow:
-0 20px 40px rgba(0,0,0,.12);
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.15);
 
 }
 
@@ -718,13 +324,41 @@ box-shadow:
 
 .product-card img{
 
-width:100%;
+    width:100%;
 
-height:280px;
+    height:300px;
 
-object-fit:cover;
+    object-fit:contain;
 
-border-radius:20px;
+    border-radius:20px;
+
+    transition:.4s;
+
+}
+
+
+
+.product-card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+
+
+.product-card h3{
+
+    margin:20px 0 10px;
+
+}
+
+
+
+.product-card p{
+
+    line-height:1.5;
+
+    color:#666;
 
 }
 
@@ -732,242 +366,241 @@ border-radius:20px;
 
 .brand{
 
-color:#c9a227;
+    color:#b08b20;
+
+    font-weight:bold;
 
 }
 
 
 
+.price{
 
+    font-size:24px;
 
-/* =================================
-PRODUCT PAGE
-================================= */
+    color:#b08b20;
 
-
-.product-page{
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:60px;
-
-padding:100px 10%;
+    font-weight:bold;
 
 }
 
 
 
-.product-image img{
-
-width:100%;
-
-border-radius:30px;
-
-}
+/* =========================
+ ADVANTAGES
+========================= */
 
 
+.adv-grid{
 
-.volume-card{
+    display:grid;
 
-display:inline-block;
+    grid-template-columns:repeat(4,1fr);
 
-padding:20px;
-
-margin:10px;
-
-border:1px solid #ddd;
-
-border-radius:20px;
-
-cursor:pointer;
+    gap:30px;
 
 }
 
 
 
-.volume-card:hover{
+.adv-grid div{
 
-border-color:#c9a227;
+    background:white;
 
-}
+    padding:35px;
 
+    text-align:center;
 
+    border-radius:25px;
 
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.07);
 
-
-
-
-
-
-/* =================================
-FOOTER
-================================= */
-
-
-footer{
-
-background:#111;
-
-color:white;
-
-text-align:center;
-
-padding:35px;
+    transition:.3s;
 
 }
 
 
 
+.adv-grid div:hover{
 
-
-
-
-
-
-/* =================================
-ANIMATION
-================================= */
-
-
-@keyframes fade{
-
-
-from{
-
-opacity:0;
-
-transform:translateY(40px);
-
-}
-
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
+    transform:translateY(-8px);
 
 }
 
 
 
+/* =========================
+ CONTACTS
+========================= */
 
 
+.contact-grid{
 
+    display:grid;
 
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 
-
-/* =================================
-MOBILE
-================================= */
-
-
-@media(max-width:900px){
-
-
-
-.header{
-
-height:auto;
-
-padding:20px;
-
-flex-direction:column;
-
-gap:20px;
+    gap:30px;
 
 }
 
 
 
-nav{
+.contact-card{
 
-flex-wrap:wrap;
+    background:white;
 
-justify-content:center;
+    padding:40px;
 
-}
+    text-align:center;
 
+    border-radius:25px;
 
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
 
-.hero-content h1{
-
-font-size:40px;
-
-letter-spacing:5px;
-
-}
-
-
-
-.hero-content h2{
-
-font-size:22px;
+    transition:.3s;
 
 }
 
 
 
-.hero-buttons{
+.contact-card:hover{
 
-flex-direction:column;
-
-}
-
-
-
-.products-preview,
-.catalog-grid,
-.adv-grid,
-.review-grid,
-.contact-grid,
-.product-page{
-
-grid-template-columns:1fr;
+    transform:translateY(-10px);
 
 }
 
 
 
-.section h2{
+.contact-card i{
 
-font-size:30px;
+    color:#d4af37;
+
+}
+
+
+
+.contact-card p{
+
+    margin:15px;
 
 }
 
 
+
+/* =========================
+ CART
+========================= */
+
+
+.cart-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    margin-bottom:20px;
+
 }
-/* =================================
-/* =================================
-FLOAT BUTTONS
-================================= */
 
 
-/* =================================
-FLOAT BUTTONS
-================================= */
+
+.cart-item img{
+
+    width:130px;
+
+    height:130px;
+
+    object-fit:contain;
+
+}
+
+
+
+.cart-summary{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    margin-top:30px;
+
+}
+
+
+
+/* =========================
+ FORM
+========================= */
+
+
+.business input,
+.business select,
+.business textarea{
+
+
+    display:block;
+
+    width:100%;
+
+    max-width:550px;
+
+    margin:15px auto;
+
+    padding:16px;
+
+    border-radius:12px;
+
+    border:1px solid #ddd;
+
+    font-size:16px;
+
+}
+
+
+
+.business textarea{
+
+    resize:none;
+
+}
+
+
+
+/* =========================
+ FLOAT BUTTONS
+========================= */
 
 
 .floating-buttons{
 
-position:fixed;
+    position:fixed;
 
-right:30px;
+    right:25px;
 
-bottom:30px;
+    bottom:25px;
 
-display:flex;
+    display:flex;
 
-flex-direction:column;
+    flex-direction:column;
 
-gap:18px;
+    gap:15px;
 
-z-index:3000;
+    z-index:999;
 
 }
 
@@ -976,26 +609,24 @@ z-index:3000;
 .whatsapp-float,
 .instagram-float{
 
-width:65px;
 
-height:65px;
+    width:60px;
 
-border-radius:50%;
+    height:60px;
 
-display:flex;
+    border-radius:50%;
 
-align-items:center;
+    display:flex;
 
-justify-content:center;
+    justify-content:center;
 
-font-size:32px;
+    align-items:center;
 
-color:white;
+    color:white;
 
-box-shadow:
-0 15px 35px rgba(0,0,0,.25);
+    font-size:30px;
 
-transition:.4s;
+    transition:.3s;
 
 }
 
@@ -1003,7 +634,7 @@ transition:.4s;
 
 .whatsapp-float{
 
-background:#25D366;
+    background:#25D366;
 
 }
 
@@ -1011,15 +642,7 @@ background:#25D366;
 
 .instagram-float{
 
-background:
-linear-gradient(
-45deg,
-#f09433,
-#e6683c,
-#dc2743,
-#cc2366,
-#bc1888
-);
+    background:#e1306c;
 
 }
 
@@ -1028,103 +651,501 @@ linear-gradient(
 .whatsapp-float:hover,
 .instagram-float:hover{
 
-transform:
-translateY(-8px)
-scale(1.12);
-
-box-shadow:
-0 20px 40px rgba(0,0,0,.35);
+    transform:scale(1.15);
 
 }
 
 
 
-@media(max-width:900px){
-
-.floating-buttons{
-
-right:15px;
-
-bottom:20px;
-
-}
+/* =========================
+ FOOTER
+========================= */
 
 
-.whatsapp-float,
-.instagram-float{
+footer{
 
-width:55px;
+    background:#111;
 
-height:55px;
+    color:white;
 
-font-size:27px;
+    padding:40px;
 
-}
+    text-align:center;
 
-}
-
-/* =================================
-LANGUAGE BUTTONS
-================================= */
-
-
-.languages{
-
-display:flex;
-
-gap:8px;
+    line-height:2;
 
 }
 
 
 
-.languages button{
+
+/* =========================
+ MOBILE
+========================= */
 
 
-border:none;
+@media(max-width:1000px){
 
-background:#fff;
 
-cursor:pointer;
+.catalog-grid{
 
-padding:7px 12px;
+    grid-template-columns:repeat(2,1fr);
 
-border-radius:20px;
+}
 
-border:1px solid #ddd;
+
+.adv-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.hero h1{
+
+    font-size:45px;
+
+}
+
 
 }
 
 
 
-.languages button:hover{
+
+@media(max-width:600px){
 
 
-FLEUR PERFUMES
-│
-├── index.html
-│
-│     ...
-│
-│     <!-- FLOAT BUTTONS -->
-│     <div class="floating-buttons">
-│          WhatsApp
-│          Instagram
-│     </div>
-│
-└── </body>
-     </html>
+.header{
+
+    flex-direction:column;
+
+    height:auto;
+
+    gap:20px;
+
+    padding:20px;
+
+}
 
 
-style.css
 
-│
-├── HEADER
-├── HERO
-├── PRODUCTS
-├── CATALOG
-├── FOOTER
-├── ANIMATION
-├── MOBILE
-├── FLOAT BUTTONS
-└── LANGUAGE BUTTONS
+nav{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:15px;
+
+}
+
+
+
+.hero{
+
+    height:550px;
+
+}
+
+
+
+.hero h1{
+
+    font-size:34px;
+
+}
+
+
+
+.hero h2{
+
+    font-size:24px;
+
+}
+
+
+
+.catalog-grid,
+.adv-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.cart-item{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+
+}
+/* =========================
+   CATALOG PAGE
+========================= */
+
+
+.catalog-page{
+
+    padding:80px 7%;
+
+    text-align:center;
+
+}
+
+
+
+.catalog-page h1{
+
+    font-size:45px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.catalog-page > p{
+
+    color:#666;
+
+    font-size:18px;
+
+    margin-bottom:40px;
+
+}
+
+
+
+/* SEARCH + FILTER */
+
+
+.catalog-tools{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:50px;
+
+}
+
+
+
+.search-box,
+.catalog-tools select{
+
+
+    width:320px;
+
+    padding:15px 20px;
+
+    border-radius:30px;
+
+    border:1px solid #ddd;
+
+    background:white;
+
+    font-size:16px;
+
+    outline:none;
+
+}
+
+
+
+.search-box:focus,
+.catalog-tools select:focus{
+
+    border-color:#d4af37;
+
+}
+
+
+
+
+/* SELECT VOLUME */
+
+
+.volume{
+
+    width:90%;
+
+    padding:12px;
+
+    margin:15px 0;
+
+    border-radius:12px;
+
+    border:1px solid #ddd;
+
+    background:#faf8f5;
+
+}
+
+
+
+
+
+/* CART BUTTON */
+
+
+.product-card button{
+
+    margin-top:10px;
+
+}
+
+
+
+
+/* CART EMPTY */
+
+
+#cartItems h3{
+
+    text-align:center;
+
+    font-size:25px;
+
+    padding:40px;
+
+}
+
+
+
+
+/* TOTAL */
+
+
+#total{
+
+    text-align:center;
+
+    color:#b08b20;
+
+    margin:30px;
+
+}
+
+
+
+
+
+
+/* =========================
+ WHOLESALE PACKAGES
+========================= */
+
+
+.catalog .product-card h3{
+
+    color:#b08b20;
+
+}
+
+
+
+
+
+
+/* =========================
+ CONTACT LINKS
+========================= */
+
+
+.contact-card a{
+
+    color:#b08b20;
+
+    font-weight:bold;
+
+}
+
+
+
+.contact-card a:hover{
+
+    text-decoration:underline;
+
+}
+
+
+
+
+
+
+/* =========================
+ MOBILE CATALOG
+========================= */
+
+
+@media(max-width:600px){
+
+
+.catalog-page h1{
+
+    font-size:32px;
+
+}
+
+
+
+.catalog-tools{
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+
+
+.search-box,
+.catalog-tools select{
+
+    width:100%;
+
+}
+
+
+
+.product-card img{
+
+    height:250px;
+
+}
+
+
+}
+/* =========================
+   FLEUR PERFUMES FIXES
+========================= */
+
+
+/* CATALOG HEADER */
+
+.catalog-header{
+
+    padding:80px 7%;
+
+    text-align:center;
+
+    background:#111;
+
+    color:white;
+
+}
+
+
+.catalog-header h1{
+
+    font-size:50px;
+
+    letter-spacing:5px;
+
+    margin-bottom:20px;
+
+}
+
+
+.catalog-header h2{
+
+    color:#d4af37;
+
+    font-size:32px;
+
+    margin-bottom:20px;
+
+}
+
+
+.catalog-header p{
+
+    font-size:20px;
+
+    line-height:1.7;
+
+}
+
+
+
+/* PRODUCT DESCRIPTION */
+
+.description{
+
+    min-height:70px;
+
+    margin:15px 0;
+
+}
+
+
+
+/* CART TITLE */
+
+.cart-page h1{
+
+    text-align:center;
+
+    font-size:40px;
+
+    margin-bottom:40px;
+
+}
+
+
+
+/* PRODUCT BUTTON */
+
+.product-card .btn{
+
+    margin-top:20px;
+
+}
+
+
+
+/* PRODUCT IMAGE MOBILE */
+
+@media(max-width:600px){
+
+
+    .catalog-header h1{
+
+        font-size:32px;
+
+    }
+
+
+    .catalog-header h2{
+
+        font-size:24px;
+
+    }
+
+
+    .catalog-header p{
+
+        font-size:16px;
+
+    }
+
+
+    .cart-page h1{
+
+        font-size:30px;
+
+    }
+
+
+}
